@@ -1,0 +1,327 @@
+/*@font-face{
+    src: url(fonts/lemon milk/LemonMilk.otf) ;
+    font-family: LemonMilk;
+}*/
+
+body{
+    background-color:#e4e4e4;
+}
+
+*{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.hidden
+{
+    display: none;
+}
+
+nav{
+    height: 50px;
+    line-height: 50px;
+    position:fixed;
+    background-color: #ffffff;
+    box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+}
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 50px;
+    line-height: 50px;
+}
+.navbar-fixed {
+    height: 50px;
+}
+nav ul a {
+    transition: background-color .8s ease;
+    font-size: 1rem;
+    color: #757575;
+    display: block;
+    padding: 0 15px;
+    cursor: pointer;
+}
+nav .brand-logo {
+    position: absolute;
+    color: #5da5c9;
+    display: inline-block;
+    font-size: 1.3em;
+    padding: 0;
+    white-space: nowrap;
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+}
+.header
+{
+    height:100vh;
+    background-image: url('../images/BG_2.1.jpg');
+    background-size:cover;
+    
+}
+.login-card{
+    height:400px;
+    padding-top:10vh;
+}
+.col.m6.s12.login-form {
+    padding: 30px 40px;
+
+   background-color:#ffffff;   
+    height:400px;
+    padding:15px 50px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+    border-radius:5px;
+}
+.login-form h2 {
+    font-size: 1.7em;
+    font-weight: bold;
+    color: #636363;
+}
+a.btn.primary-btn {
+    background-color: #39b6dd;
+    float: right;
+    padding: 0px 40px;
+}
+a.fp-link {
+    color: #949494;
+    font-size: 0.8em;
+}
+
+/* Toggle Styles */
+div#sidebar-wrapper {
+    border-right: 1px solid #ececec;
+
+}
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.sidebar-nav li a i {
+    padding-right: 30px;
+}
+#wrapper.toggled {
+    padding-left: 200px;
+}
+span.glyphicon{
+    padding-right:10px;
+}
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 200px;
+    width: 0;
+    height: 100%;
+    margin-left: -200px;
+    overflow-y: auto;
+    background:  #005795;  /* fallback for old browsers */
+   /* background: -webkit-linear-gradient(to top, #348AC7, #7474BF); */ /* Chrome 10-25, Safari 5.1-6 */
+   /* background: linear-gradient(to top, #348AC7, #7474BF);*/ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 200px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 0px;
+    min-height:100vh;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -200px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    margin: 0;
+    padding: 0px 0px;
+    list-style: none;
+}
+.sidebar-nav li {
+
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1em;
+    padding-left: 20px;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #434343;
+    background: #ffffff;  /* fallback for old browsers */
+    
+}
+#sidebar-wrapper i.fa {
+    padding-right: 30px;
+}
+
+#sidebar-wrapper i.fa .fa-bars {
+   /* padding-right: 30px;*/
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+.sidebar-nav h2 {
+    color: #cedcff;
+    font-size: 1.3em;
+    padding: 30px 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 25px;
+    border-bottom: 1px solid #718dc3;
+}
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 55px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 200px;
+    }
+
+    #sidebar-wrapper {
+        width: 55px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 200px;
+    }
+
+    #page-content-wrapper {
+        padding: 0px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+a#menu-toggle {
+    /*color: #afaaaa;*/
+   /* box-shadow: none;*/
+   /* margin-left: 215px;*/
+}
+#sidebar-wrapper img {
+    margin: 0 auto;
+    display: block;
+   
+}
+#sidebar-wrapper li.active {
+    border-left: 5px solid #5dac93;
+    color:#ffffff;
+}
+div#page-content-wrapper {
+    padding: 15px 20px;
+}
+a.active {
+    border-left: 5px solid #ffffff;
+}
+h2.admin-login {
+    color: #35b8e0;
+    font-size: 2em;
+}
+h2.page-title, h2.section-heading {
+    font-size: 1.4em;
+    color: #424242;
+}
+
+.page-content .card button.btn_addDevice
+{
+    background-color: red;
+}
+.section.card{
+    padding:40px;
+}
+.page-section .row{
+    margin-bottom:0px;
+}
+.no-pad{
+    margin-bottom:0px;
+}
+.welcome-cards .card {
+    text-align: center;
+    color:#434343;
+}
+.welcome-cards h2 {
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding-left:20px;
+    
+}
+.md-card i {
+    float: left;
+    background: #e35d5b;
+    padding: 30px;
+    color: #ffffff;
+    width: 110px;
+}
+
+.history-card i{
+    float: left;
+    background: #76b852;
+    padding: 30px;
+    color: #ffffff;
+    width: 110px;
+}
+.reports-card i{
+    float: left;
+    background: #7474BF;
+    padding: 30px;
+    color: #ffffff;
+    width: 110px;
+
+}
+.card.dev-card {
+    border-left: 5px solid #527fc3;
+    padding: 30px;
+}
+.dev-card h2{
+    text-align:left;
+    letter-spacing:0px;
+    line-height:25px;
+
+}
+.card.device-card {
+    padding: 30px;
+    color: #547ec2;
+}
+.card.device-card p {
+    color: #434343;
+    font-size: 1.1em;
+}

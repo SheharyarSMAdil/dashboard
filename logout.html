@@ -1,0 +1,16 @@
+<script>
+$(window).bind("pageshow", function(event) {
+    if (event.originalEvent.persisted) {
+        window.location.reload(); 
+    }
+});
+</script>
+<script>
+delete_cookie();
+
+function delete_cookie() {
+    localStorage.removeItem("nextsense_user");
+    location.replace("index.html");
+}
+
+</script>
