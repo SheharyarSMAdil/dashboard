@@ -1,22 +1,22 @@
 <?php 
 
-echo $q; ?>
+ ?>
 
  <div class="content" style="">
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4"></div>
-                
+              
             </div>
 
 
             <div class="row " >
 
-                <button  id="demo-pie-1" data-percent="34" value="pm2"  onclick="setValue(this,'cir1')" class="flip-card pie-title-center circle col-md-3 circle animated flipInY" style="padding: 0px; background-color: #B6D161; outline : 0; -moz-outline : 0;">
+                <button  id="demo-pie-1" data-percent="34" value="pm2"  onclick="setValue(this,'cir1')" class="flip-card pie-title-center circle col-md-3 circle animated flipInY" style="padding: 0px; background-color: #B6D161; outline : 0; -moz-outline : 0; ">
                     
                           <div class="flip-card-inner"   style="background-color: #B6D161;   display: inline-grid;">
                             <div class="flip-card-front" id="cir1" style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="pm2"></h3>
-                                <p>PM 2.5</p>
+                                <p id="param1">PM 2.5</p>
                              <!-- <p style="text-align: center; align-self: center; justify-content: center;">PM 2.5</p> -->
                             </div>
                             <!-- <div class="flip-card-back" style="background-color: #0073bc;">
@@ -34,7 +34,7 @@ echo $q; ?>
                     
                           <div class="flip-card-inner"  style="background-color: #627AAD;  display: inline-grid;">
                             <div class="flip-card-front" id="cir2"  style="text-align: center; align-self: center; justify-content: center;  padding-top: 20%;">  <h3 style="" id="pm10"></h3>
-                                <p>PM 10</p>
+                                <p id="param2">PM 10</p>
                              <!-- <p style="text-align: center; align-self: center; justify-content: center;">PM 2.5</p> -->
                             </div>
                             <!-- <div class="flip-card-back" style="background-color: #0073bc;">
@@ -51,7 +51,7 @@ echo $q; ?>
                    
                           <div class="flip-card-inner"  style="background-color: #77BDF1; display: inline-grid; ">
                             <div class="flip-card-front" id="cir3"  style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="voc"></h3>
-                                <p>VOC</p>
+                                <p id="param3">VOC</p>
                              <!-- <p style="text-align: center; align-self: center; justify-content: center;">PM 2.5</p> -->
                             </div>
                             <!-- <div class="flip-card-back" style="background-color: #0073bc;">
@@ -68,7 +68,7 @@ echo $q; ?>
                    
                           <div class="flip-card-inner"  style="background-color: #E46F61;  display: inline-grid;">
                            <div class="flip-card-front" id="cir4" style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="co2"></h3>
-                                <p>CO<sub>2</sub></p>
+                                <p id="param4">CO<sub>2</sub></p>
 
                              <!-- <p style="text-align: center; align-self: center; justify-content: center;">PM 2.5</p> -->
                             </div>
@@ -99,7 +99,7 @@ echo $q; ?>
                     <div class="blank col-md-6"></div>
                     <div class="Temp-hum col-md-3" style="text-align: right;">
 
-                        <h3 class="title" style="font-size: 52px; color:white;  margin-top: 80px;"><i class="pe-7s-sun" style="margin-right: 5px; font-size: 42px;"></i><span id="temp"></span>&deg;C</h3>
+                        <h3 class="title" style="font-size: 52px; color:white;  margin-top: 80px;"  ><i class="pe-7s-sun" style="margin-right: 5px; font-size: 42px;"></i><span id="temp"></span>&deg;C</h3>
                         <h3 class="category" style="margin-top: 0; font-size: 2em; color: white;" id="hum"></h3>
                     </div>
                     
@@ -117,7 +117,6 @@ echo $q; ?>
                         <script src="https://code.highcharts.com/highcharts.js"></script>
                         <script src="https://code.highcharts.com/modules/exporting.js"></script>
                         <script src="https://code.highcharts.com/modules/export-data.js"></script>
-
                         <div id="container" style="min-width: 310px;  height: 400px; margin: 0 auto; margin-top: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);"></div>
                         
                     </div>
@@ -140,8 +139,7 @@ echo $q; ?>
                                     <img  id="recommend4" src="assets/img/purifier_deactive3.png" alt="" style="width: 60px; height: 60px;"></br>
                                     <span id="span_rec4" style="font-size: 12px; color: #A1494E; margin-top: -50px; padding-top: -50px;">Turn On Air Purifier</span>
                                 </div> 
-                            </br>
-
+                            <br>
                                   <!-- <h5>Recommendation</h5> -->
                                    
                      </div>
