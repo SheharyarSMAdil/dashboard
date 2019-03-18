@@ -10,7 +10,7 @@ $con = mysqli_connect('localhost' , 'root' ,'');
 	else
 		echo mysqli_error($con);
 	
-	
+	echo 'test';
 	$num=mysqli_num_rows($result);
 
 	if($num==1)
