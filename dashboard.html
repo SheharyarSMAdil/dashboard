@@ -16,6 +16,16 @@
     <!-- Bootstrap core CSS     -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
+    
+    <link href="assets/css/fa/all.css" rel="stylesheet" />
+    <link href="assets/css/fa/fontawesome.min.css" rel="stylesheet" />
+    <link href="assets/css/fa/all.min.css" rel="stylesheet" />
+    <link href="assets/css/fa/fontawesome.css" rel="stylesheet" />
+    <link href="assets/css/fa/light.min.css" rel="stylesheet" />
+    <link href="assets/css/fa/light.css" rel="stylesheet" />
+
+
+
     <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
     <link href="assets/css/animate.css" rel="stylesheet"/>
@@ -29,6 +39,9 @@
 
 
     <link rel="stylesheet" type="text/css" href="assets/css/date_picker.css">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <script type="text/javascript" src="assets/js/date_picker.js"></script>
     
@@ -176,8 +189,8 @@
     }
     .circle
     {
-        width: 100px;
-        height: 100px;
+        width: 130px;
+        height: 130px;
 
     }
      .row .row1
@@ -290,7 +303,7 @@
      $("#ui-datepicker-div").css("margin-top","75vh");
   } );
   </script>
-<body onload="entry()">
+<body id="body" onload="entry()" >
 
 <div class="wrapper">
     <div class="sidebar" data-color="azure" data-image="assets/img/sidebar-4.jpg">
@@ -358,7 +371,7 @@
     </div>
 
     <div class="main-panel" >
-         <nav class="navbar navbar-default navbar-fixed" >
+         <nav class="navbar navbar-default navbar-fixed" id="nav_bar_top">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
@@ -395,7 +408,7 @@
                     <button  id="demo-pie-1" data-percent="34" value="pm2"  onclick="setValue(this,'cir1')" class="flip-card pie-title-center circle col-md-3 circle animated flipInY" style="padding: 0px; background-color: #B6D161; outline : 0; -moz-outline : 0; ">
                         
                               <div class="flip-card-inner"   style="background-color: #B6D161;   display: inline-grid;">
-                                <div class="flip-card-front" id="cir1" style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="pm2"></h3>
+                                <div class="flip-card-front" id="cir1" style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="pm2"></h3><h3 style="" id="press"></h3>
                                     <p id="param1">PM 2.5</p>
                                  <!-- <p style="text-align: center; align-self: center; justify-content: center;">PM 2.5</p> -->
                                 </div>
@@ -413,7 +426,7 @@
                    <button id="demo-pie-2" data-percent="34" value="pm10"  onclick='setValue(this,"cir2")' class="flip-card pie-title-center circle col-md-3 circle animated flipInY" style="text-align: center; padding: 0px; background-color: #627AAD;  outline : 0; -moz-outline : 0;">
                         
                               <div class="flip-card-inner"  style="background-color: #627AAD;  display: inline-grid;">
-                                <div class="flip-card-front" id="cir2"  style="text-align: center; align-self: center; justify-content: center;  padding-top: 20%;">  <h3 style="" id="pm10"></h3>
+                                <div class="flip-card-front" id="cir2"  style="text-align: center; align-self: center; justify-content: center;  padding-top: 20%;">  <h3 style="" id="pm10"></h3><h3 style="" id="wd"></h3>
                                     <p id="param2">PM 10</p>
                                  <!-- <p style="text-align: center; align-self: center; justify-content: center;">PM 2.5</p> -->
                                 </div>
@@ -427,10 +440,11 @@
                             </div>
                         
                     </button>
+                    
                     <button id="demo-pie-3" value="voc" data-percent="34"  onclick='setValue(this,"cir3"); ' class="flip-card pie-title-center circle col-md-3 circle animated flipInY" style="padding: 0px; background-color: #77BDF1;  outline : 0; -moz-outline : 0;">
                        
                               <div class="flip-card-inner"  style="background-color: #77BDF1; display: inline-grid; ">
-                                <div class="flip-card-front" id="cir3"  style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="voc"></h3>
+                                <div class="flip-card-front" id="cir3"  style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="voc"></h3><h3 style="" id="ws"></h3>
                                     <p id="param3">VOC</p>
                                  <!-- <p style="text-align: center; align-self: center; justify-content: center;">PM 2.5</p> -->
                                 </div>
@@ -447,7 +461,7 @@
                     <button id="demo-pie-4" value="co2" data-percent="34"  onclick='setValue(this,"cir4")' class="flip-card pie-title-center circle col-md-3 circle animated flipInY" style="padding: 0px; background-color: #E46F61;  outline : 0; -moz-outline : 0; ">
                        
                               <div class="flip-card-inner"  style="background-color: #E46F61;  display: inline-grid;">
-                               <div class="flip-card-front" id="cir4" style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="co2"></h3>
+                               <div class="flip-card-front" id="cir4" style="text-align: center; align-self: center; justify-content: center; padding-top: 20%; ">  <h3 style="" id="co2"></h3><h3 style="" id="solar"></h3>
                                     <p id="param4">CO<sub>2</sub></p>
     
                                  <!-- <p style="text-align: center; align-self: center; justify-content: center;">PM 2.5</p> -->
@@ -462,31 +476,62 @@
                             </div>
                         
                     </button>
+                    <div id="demo-pie-5"    class="" style="height: 80px; width: 0; padding: 0px; background-color: #E46F61;  outline : 0; -moz-outline : 0; display: none;"></div>
+                        
+                    
                                                 
                    
     
                 </div>
                 
-                 <div class="picPanel row" id="pic-panel" style="width: 100%; min-height: 300px; border-radius: 5px 40px 5px 30px; background-image: url(assets/img/panel_bg_azure2.jpg);  background-size: cover;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); display: inline-block;">
-                        <div class="AQI col-md-3" >
+                 <div class="picPanel row" id="pic_panel" style="width: 100%; min-height: 300px; border-radius: 5px 40px 5px 30px; background: url(assets/img/panel_bg_azure2.jpg) ;  background-size: cover;  background-attachment: fixed;  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); display: inline-block;">
+                        <div class="AQI col-md-3 col-xs-6" >
                             <img id="scale-img" src="assets/img/ScaleOnly_white.png" alt="" style="">
                             <h1 id="iaq" style="margin-top: -10px;"></h1>
+                            
+                            <div id="wms_panel1" style="display: none; margin-top: 50px;" > 
+                            <i class="fas fa-cloud-showers-heavy" style="color: #fff; font-size: 3em; margin-right: 15px;"></i>
+                            <h1 id="cur_rain" style="margin-top: -10px; font-size: 3em; display: inline-block;"></h1>
+                           
+                        </br>
+                        <i class="fas fa-cloud-sun-rain"  style="color: #fff; font-size: 2em; margin-right: 15px;"></i>
+                        
+                            <h1 id="pre_rain" style="margin-top: -10px; font-size: 2em; display: inline-block;"></h1>
+                        </div>
+
+                        <div id="gwr_panel1" style="display: none">
+                                
+                                <i class="fas fa-water" style="color: #fff; font-size: 2em; margin-right: 15px; display: inline-block"></i>
+                                <h1 id="water_level" style="margin-top: -10px; font-size: 5em; display: inline-block;"></h1>
+                        </div>
                             <span id="iaq-status-capsule" style="margin-top: -10px;">AQI | Poor</span> <br/>
-                            <p id="welcome-note"> Hello There! Good Morning.. </p>
+                            <br/>
+                            <br/>
+                            <p id="welcome-note" style=" margin-bottom: 5px;"> Hello There! &nbsp; <p id="period" style=" margin-bottom: 5px;" ></p> </p> <br>
+                            <div id="wms_panel2" style="display: none;">
+                             <i class="far fa-clock fa-spin" style="color: #fff;"></i> <p id="lut" style="margin-bottom: 5px;" ></p> <br>
+                             <i class="fas fa-map-marker-alt" style="color: #fff;"></i> <p id="long"></p> <p>x</p> <p id="latti"></p> 
+                            </div>
+                            <div id="gwr_panel2" style="display:none;">
+                                <i class="far fa-clock" style="color: #fff;"></i>
+                                <p id="gwr_lut" style="margin-bottom: 5px;" ></p>
+                            </div>
+
                             <!-- <span class="AQI_status">Poor</span> -->
     
                         </div>
                         <div class="blank col-md-6"></div>
-                        <div class="Temp-hum col-md-3" style="text-align: right;">
+                        <div class="Temp-hum col-md-3 col-xs-6" id="temp-hum-div" style="text-align: right;">
     
-                            <h3 class="title" style="font-size: 52px; color:white;  margin-top: 80px;"  ><i class="pe-7s-sun" style="margin-right: 5px; font-size: 42px;"></i><span id="temp"></span>&deg;C</h3>
-                            <h3 class="category" style="margin-top: 0; font-size: 2em; color: white;" id="hum"></h3>
+                            <h3 class="title" style="font-size: 30px; color:white;  margin-top: 80px; display: inline-block;"  ><i class="fal fa-sun fa-spin" style="margin-right: 5px; font-size: 0.7em; display: inline-flex;"></i><span id="temp"></span>&deg;C</h3> <br>
+                          
+                            <i class="fal fa-tint " style="color: #fff; display: inline-block; margin-right: 10px; font-size: 1.2em;"></i><h3 class="category" style="margin-top: 0; font-size: 2em; color: white;  display: inline-block;" id="hum"></h3>
                         </div>
                         
                     </div>
-                    <div class="row" style="text-align: center;">
+                    <div class="row" id="iaq-emoji" style="text-align: center;">
                         <div  class="col-md-12" style="text-align: center;">
-                            <div id="iaq-emoji" class="animated flipInY" style="   width: 160px; height: 160px; border-radius: 50%; background-color: #EDEDED;  margin:-85px 30px 0px 30vw; align-self: center; padding: 10px;" >
+                            <div  class="animated flipInY" style="   width: 160px; height: 160px; border-radius: 50%; background-color: #EDEDED;  margin:-85px 30px 0px 30vw; align-self: center; padding: 10px;" >
                                <img src="" style="width: 100%; height: 100%;" alt="" id="iaq_img">
                             </div>
                         </div>
@@ -589,6 +634,39 @@
        
 
 <script>
+var d = new Date(),
+    h = d.getHours(),
+    i,j;
+
+if (h < 12)
+{
+     i = " Good Morning";
+     j="bg3_ex.jpg"
+}
+else if (h < 18)
+{
+     i = " Good After Noon";
+     j="bg2_ex.jpg"
+
+}
+else if (h < 21) 
+{
+    i = " Good Evening";
+    j="bg4_ex.jpg"
+}
+else if (h < 24)
+{
+//    document.getElementById('body').style.backgroundColor="#1E1E1E";
+//    document.getElementById('nav_bar_top').style.backgroundColor="#333333";
+   
+     i = " Good Night";
+     j="bg1_ex.jpg"
+}
+//  alert(h);
+//  alert("assets/img/"+j);
+
+document.getElementById('pic_panel').style.backgroundImage= "url(assets/img/"+j+")";
+document.getElementById('period').innerHTML=i;
 
     var i=Math.floor(Math.random() * 2);
 //     alert(i);
@@ -678,45 +756,120 @@ function set(x){
     // ----------------changes by sheharyar--------------------
         if(x.includes('wms'))
         {
+            document.getElementById("demo-pie-1").style.display="inline-block";
+            document.getElementById("demo-pie-2").style.display="inline-block";
+            document.getElementById("demo-pie-3").style.display="inline-block";
+            document.getElementById("demo-pie-4").style.display="inline-block";
+
+
             document.getElementById("param1").innerHTML = "Pressure";
             document.getElementById("param2").innerHTML = "Wind Direction";
             document.getElementById("param3").innerHTML = "Wind Speed";
-            document.getElementById("param4").innerHTML = "Rainfall";
+            document.getElementById("param4").innerHTML = "Solar Radiation";
 
             document.getElementById("scale-img").style.display="none";
 
             document.getElementById("iaq").style.display="none";
-           
+            
             document.getElementById("iaq-status-capsule").style.display="none";
-            document.getElementById("welcome-note").style.display="none";
+            // document.getElementById("welcome-note").style.display="none";
             document.getElementById("iaq-emoji").style.display="none";
 
-            
+            document.getElementById("pm10").style.display="none";
+            document.getElementById("pm2").style.display="none";
+            document.getElementById("voc").style.display="none";
+            document.getElementById("co2").style.display="none";
 
+            document.getElementById("press").style.display="inline-block";
+            document.getElementById("wd").style.display="inline-block";
+            document.getElementById("ws").style.display="inline-block";
+            document.getElementById("solar").style.display="inline-block";
+            
+            document.getElementById("wms_panel1").style.display="inline-block";
+            document.getElementById("wms_panel2").style.display="inline-block";
+
+            document.getElementById("demo-pie-5").style.display="none";
+
+            document.getElementById("gwr_panel1").style.display="none";
+            document.getElementById("gwr_panel2").style.display="none";
+
+            document.getElementById("temp-hum-div").style.display="block";
         }
         else if(x.includes('iaq'))
         {
+            document.getElementById("demo-pie-1").style.display="inline-block";
+            document.getElementById("demo-pie-2").style.display="inline-block";
+            document.getElementById("demo-pie-3").style.display="inline-block";
+            document.getElementById("demo-pie-4").style.display="inline-block";
+
             document.getElementById("param1").innerHTML = "PM 2.5";
             document.getElementById("param2").innerHTML = "PM 10";
             document.getElementById("param3").innerHTML = "VOC" ;
             document.getElementById("param4").innerHTML = "CO<sub>2</sub>";
 
             document.getElementById("scale-img").style.display="inline-block";
-            document.getElementById("iaq").style.display="inline-block";
+            document.getElementById("iaq").style.display="block";
            
-            document.getElementById("iaq-status-capsule").style.display="inline-block";
+            document.getElementById("iaq-status-capsule").style.display="block";
             document.getElementById("welcome-note").style.display="inline-block";
-            document.getElementById("iaq-emoji").style.display="inline-block";
+            document.getElementById("iaq-emoji").style.display="inline-flex";
+
+            document.getElementById("press").style.display="none";
+            document.getElementById("wd").style.display="none";
+            document.getElementById("ws").style.display="none";
+            document.getElementById("solar").style.display="none";
+
+            document.getElementById("wms_panel1").style.display="none";
+            document.getElementById("wms_panel2").style.display="none";
+
+            document.getElementById("pm10").style.display="inline-block";
+            document.getElementById("pm2").style.display="inline-block";
+            document.getElementById("voc").style.display="inline-block";
+            document.getElementById("co2").style.display="inline-block";
+
+            document.getElementById("demo-pie-5").style.display="none";
+
+            document.getElementById("gwr_panel1").style.display="none";
+            document.getElementById("gwr_panel2").style.display="none";
+
+            document.getElementById("temp-hum-div").style.display="block";
         }
         else if(x.includes('gwr'))
         {
+            document.getElementById("scale-img").style.display="none";
+            document.getElementById("temp-hum-div").style.display="none";
+
+            document.getElementById("iaq").style.display="none";
+            
+            document.getElementById("iaq-status-capsule").style.display="none";
+            // document.getElementById("welcome-note").style.display="none";
+            document.getElementById("iaq-emoji").style.display="none";
+
+            document.getElementById("pm10").style.display="none";
+            document.getElementById("pm2").style.display="none";
+            document.getElementById("voc").style.display="none";
+            document.getElementById("co2").style.display="none";
+
+            document.getElementById("press").style.display="none";
+            document.getElementById("wd").style.display="none";
+            document.getElementById("ws").style.display="none";
+            document.getElementById("solar").style.display="none";
+
+            document.getElementById("wms_panel1").style.display="none";
+            document.getElementById("wms_panel2").style.display="none";
             
             document.getElementById("demo-pie-1").style.display="none";
             document.getElementById("demo-pie-2").style.display="none";
             document.getElementById("demo-pie-3").style.display="none";
             document.getElementById("demo-pie-4").style.display="none";
 
-            document.getElementById("pic-panel").style.marginTop="20px;";
+            document.getElementById("pic_panel").style.marginTop="4em;";
+            document.getElementById("pic_panel").style.zIndex="-1";
+
+            document.getElementById("demo-pie-5").style.display="block";
+
+            document.getElementById("gwr_panel1").style.display="block";
+            document.getElementById("gwr_panel2").style.display="block";
 
 
 
@@ -892,7 +1045,7 @@ else{
     $(document).ready(function(){
 ex=document.getElementById("device_para").value;
 var device=ex.split(",");
-alert('hi');
+// alert(device);
 
             $.ajax({ 
     type: 'POST', 
@@ -900,15 +1053,33 @@ alert('hi');
     data: { device: device[0] }, 
     dataType: 'json',
     success: function (data) { 
-        alert(data);
-        $("#pm10").html(data[1]);
-        $("#pm2").html(data[2]);
-        $("#voc").html(data[3]);
-        $("#co2").html(data[4]);
-        $("#temp").html(data[5]);
-        $("#hum").html(data[6] +"%");
-        $("#iaq").html(data[2]);
-var s=parseInt(data[2]);
+        // alert("e");
+        $("#pm10").html(data.pm10);
+        $("#pm2").html(data.pm2);
+        $("#voc").html(data.voc);
+        $("#co2").html(data.co2);
+        $("#temp").html(data.temp);
+        $("#hum").html(data.hum);
+        $("#iaq").html(data.rand);
+
+        $("#press").html(data.press);
+        $("#wd").html(data.wd);
+        $("#ws").html(data.ws);
+        
+        $("#cur_rain").html(data.cur_rain);
+        $("#pre_rain").html(data.pre_rain);
+        $("#solar").html(data.solar);
+        $("#long").html(data.long);
+        $("#latti").html(data.latti);
+        $("#lut").html(data.time);
+
+        $("#gwr_lut").html(data.gwr_lut);
+        $("#water_level").html(data.water_level);
+
+       
+
+
+var s=parseInt(data.rand);
 //alert(s);
  $("#span_rec1").css("color","#A2494E");
   $("#span_rec2").css("color","#A2494E");
@@ -942,7 +1113,8 @@ if(0<s&& s<50){
          $("#recommend3").attr("src","assets/img/mask_active3.png");
          $("#span_rec3").css("color","white");
     }
-    else{
+    else{ 
+
 
         $("#iaq_img").attr("src","assets/img/6.png");
          $("#recommend4").attr("src","assets/img/purifier_active3.png");

@@ -26,5 +26,6 @@
 	{
 		$data['init']="";
 	}
+	
 	echo json_encode($data);
 ?>				
